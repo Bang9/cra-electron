@@ -15,8 +15,14 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React !!! with electron
+          Learn React with electron
         </a>
+
+        <div>
+          We are using Node.js <span id="node-version"></span>,
+          Chromium <span id="chrome-version"></span>,
+          and Electron <span id="electron-version"></span>.
+        </div>
       </header>
     </div>
   );
