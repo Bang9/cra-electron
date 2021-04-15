@@ -1,7 +1,24 @@
 // Modules to control application life and create native browser window
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, ipcMain } = require("electron");
 const path = require("path");
 const craHost = `http://localhost:${process.env.PORT || 3000}`;
+
+const robot = require("robotjs");
+
+function sin() {
+  // Speed up the mouse.
+  robot.setMouseDelay(2);
+
+  var twoPI = Math.PI * 2.0;
+  var screenSize = robot.getScreenSize();
+  var height = screenSize.height / 2 - 10;
+  var width = screenSize.width;
+
+  for (let x = 0; x < width; x++) {
+    const y = height * Math.sin((twoPI * x) / width) + height;
+    robot.moveMouse(x, y);
+  }
+}
 
 function createWindow() {
   // Create the browser window.
@@ -36,6 +53,10 @@ app.whenReady().then(() => {
     // On macOS it's common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.
     if (BrowserWindow.getAllWindows().length === 0) createWindow();
+  });
+
+  ipcMain.on("robotjs", (event, args) => {
+    sin();
   });
 });
 

@@ -1,5 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
+import { ipcRenderer } from "electron";
 
 function App() {
   return (
@@ -18,7 +19,13 @@ function App() {
           Learn React with electron
         </a>
 
-        <button onClick={() => {}}>{"move your mouse"}</button>
+        <button
+          onClick={() => {
+            ipcRenderer.send("robotjs");
+          }}
+        >
+          {"move your mouse"}
+        </button>
 
         <div>
           We are using Node.js <span id="node-version" />, Chromium{" "}
