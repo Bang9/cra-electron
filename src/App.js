@@ -18,6 +18,8 @@ function App() {
           Learn React with electron
         </a>
 
+        <button onClick={() => {}}>{"move your mouse"}</button>
+
         <div>
           We are using Node.js <span id="node-version" />, Chromium{" "}
           <span id="chrome-version" />, and Electron{" "}
