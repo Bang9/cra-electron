@@ -1,5 +1,5 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
   return (
@@ -19,9 +19,9 @@ function App() {
         </a>
 
         <div>
-          We are using Node.js <span id="node-version"></span>,
-          Chromium <span id="chrome-version"></span>,
-          and Electron <span id="electron-version"></span>.
+          We are using Node.js <span id="node-version" />, Chromium{" "}
+          <span id="chrome-version" />, and Electron{" "}
+          <span id="electron-version" />.
         </div>
       </header>
     </div>
